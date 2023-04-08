@@ -42,11 +42,20 @@ func windowConfigs(a fyne.App) {
 	hello := container.NewVBox(
 		entry,
 	)
+	hello.Resize(fyne.NewSize(200, 100))
 
-	title := canvas.NewText("Title", color.White)
-	response := container.NewVBox(
-		title,
+	status := canvas.NewText("404 not found", color.White)
+	duration := canvas.NewText("0ms", color.White)
+	size := canvas.NewText("0 B", color.White)
+	header := container.NewHBox(
+		status,
+		duration,
+		size,
 	)
+	response := container.NewVBox(
+		header,
+	)
+	response.Resize(fyne.NewSize(300, 300))
 	w.Resize(fyne.NewSize(600, 300))
 	firstContainer := container.New(layout.NewHBoxLayout(), hello, layout.NewSpacer(), response)
 	w.SetContent(firstContainer)
