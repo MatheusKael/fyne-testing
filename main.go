@@ -18,6 +18,7 @@ func main() {
 	windowConfigs(a)
 }
 
+// INFO -> Just a test function
 func docsLayout(a fyne.App) {
 	myWindow := a.NewWindow("Box Layout")
 
@@ -57,7 +58,9 @@ func windowConfigs(a fyne.App) {
 	)
 	response.Resize(fyne.NewSize(300, 300))
 	w.Resize(fyne.NewSize(600, 300))
-	firstContainer := container.New(layout.NewHBoxLayout(), hello, layout.NewSpacer(), response)
+
+	// FIX -> Header not appearing inside response
+	firstContainer := container.New(layout.NewHBoxLayout(), hello, layout.NewSpacer(), header)
 	w.SetContent(firstContainer)
 	w.ShowAndRun()
 
