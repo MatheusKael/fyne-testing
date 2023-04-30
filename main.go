@@ -59,8 +59,7 @@ func windowConfigs(a fyne.App) {
 	response.Resize(fyne.NewSize(300, 300))
 	w.Resize(fyne.NewSize(600, 300))
 
-	// FIX -> Header not appearing inside response
-	firstContainer := container.New(layout.NewHBoxLayout(), hello, layout.NewSpacer(), header)
+	firstContainer := container.New(layout.NewHBoxLayout(), hello, layout.NewSpacer(), response)
 	w.SetContent(firstContainer)
 	w.ShowAndRun()
 
